@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun Ayah!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 3em;
+            color: #2e8b57;
+        }
+        p {
+            font-size: 1.5em;
+        }
+        .image-container {
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .audio-container {
+            margin: 20px 0;
+        }
+        .gift-options {
+            margin: 30px 0;
+        }
+        .gift-options label {
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+        .message-form {
+            margin-top: 30px;
+            text-align: left;
+        }
+        .message-form label {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        .message-form textarea {
+            width: 100%;
+            height: 100px;
+            resize: none;
+            font-size: 1em;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Selamat Ulang Tahun, Ayah!</h1>
+        <p>Semoga ayah selalu diberikan kesehatan, kebahagiaan, dan umur panjang. Terima kasih atas segala kasih sayang dan pengorbananmu.</p>
+        <div class="image-container">
+            <img src="foto nih.jpg" alt="Foto Ayah">
+        </div>
+        <div class="audio-container">
+            <audio controls autoplay>
+                <source src="ultah.mp3" type="audio/mpeg">
+                Browser Anda tidak mendukung pemutar audio.
+            </audio>
+         </div>
+        <div class="message-form">
+            <form id="messageForm" action="https://wa.me/6283818980531" method="get" target="_blank">
+                <input type="hidden" id="message" name="text" value="">
+                <label for="messageTextArea">Tulis Hadiah yang ayah mau:</label>
+                <textarea id="messageTextArea" name="text" placeholder="Tulis ucapan Anda di sini..." required></textarea>
+                <br>
+                <input type="submit" value="Kirim Ucapan">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function prepareWhatsAppMessage() {
+            var giftSelect = document.getElementById("gift");
+            var selectedGift = giftSelect.options[giftSelect.selectedIndex].text;
+            var messageTextArea = document.getElementById("messageTextArea");
+            var message = "Halo! Saya ingin memberikan hadiah " + selectedGift + " untuk ulang tahun ayah. Ucapan saya: ";
+            messageTextArea.value = message;
+        }
+    </script>
+</body>
+</html>
